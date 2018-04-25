@@ -148,6 +148,14 @@ while carryOn:
         for button in level2_buttons:
             button.draw()
 
+    #Title
+    fontTitle = pygame.font.Font('freesansbold.ttf', 32)
+    textSurfaceTitle = fontTitle.render('Collab Menu', True, TITLE_COLOUR) 
+    textRectTitle = textSurfaceTitle.get_rect()
+    textRectTitle.center = (400, 200)
+
+    screen.blit(textSurfaceTitle, textRectTitle)
+
     # Update the screen with queued shapes
     pygame.display.flip()
 
