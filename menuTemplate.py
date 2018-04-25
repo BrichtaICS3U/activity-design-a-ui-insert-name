@@ -32,7 +32,7 @@ pygame.display.set_caption("My Button")
 
 # Define text for title of game
 fontTitle = pygame.font.Font('freesansbold.ttf', 32)
-textSurfaceTitle = fontTitle.render('My Awesome Game!', True, BLACK) 
+textSurfaceTitle = fontTitle.render('My Awesome Game!', True, TITLE_COLOUR) 
 textRectTitle = textSurfaceTitle.get_rect()
 textRectTitle.center = (200, 150)   # place the centre of the text
 
@@ -60,7 +60,7 @@ while carryOn:
     # --- Draw code goes here
 
     # Clear the screen to white
-    screen.fill(WHITE)
+    screen.fill(BACKGROUND_COLOUR)
 
     # Queue shapes to be drawn
     

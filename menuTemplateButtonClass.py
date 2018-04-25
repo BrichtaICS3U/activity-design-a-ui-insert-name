@@ -111,9 +111,11 @@ clock = pygame.time.Clock()
 
 #create button objects
 #buttons on layer one
+
 button_01 = Button("Hello", (SCREENWIDTH/2, SCREENHEIGHT/3 ), Hello,BUTTON1)
 button_04 = Button("Settings",(SCREENWIDTH/2, SCREENHEIGHT/3 + 100),my_next_function,BUTTON2)
 button_03 = Button("Quit", (SCREENWIDTH/2, SCREENHEIGHT/3 + 200), my_quit_function, BUTTON3)
+
 
 #buttons on layer two
 button_02 = Button("Previous", (SCREENWIDTH/2, SCREENHEIGHT/3 + 200), my_previous_function)
