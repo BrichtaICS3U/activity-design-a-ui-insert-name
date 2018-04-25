@@ -90,6 +90,9 @@ def Hello():
     """this function will print out hello in the shell"""
     print("Hello")
 
+def sound_ON():
+    """this will turn the sound on"""
+
 def mousebuttondown(level):
     """A function that checks which button was pressed"""
     pos = pygame.mouse.get_pos()
@@ -108,16 +111,16 @@ clock = pygame.time.Clock()
 
 #create button objects
 #buttons on layer one
-button_01 = Button("Next", (SCREENWIDTH/2, SCREENHEIGHT/3 + 100), my_next_function)
-button_04 = Button("Settings",(SCREENWIDTH/2, SCREENHEIGHT/3 + 100),Hello)
-button_03 = Button("Quit", (SCREENWIDTH/2, SCREENHEIGHT/3 + 100), my_quit_function, bg=(50, 200, 20))
+button_01 = Button("Hello", (SCREENWIDTH/2, SCREENHEIGHT/3 ), Hello,BUTTON1)
+button_04 = Button("Settings",(SCREENWIDTH/2, SCREENHEIGHT/3 + 100),my_next_function,BUTTON2)
+button_03 = Button("Quit", (SCREENWIDTH/2, SCREENHEIGHT/3 + 200), my_quit_function, BUTTON3)
 
 #buttons on layer two
-button_02 = Button("Previous", (SCREENWIDTH/2, SCREENHEIGHT/3), my_previous_function)
+button_02 = Button("Previous", (SCREENWIDTH/2, SCREENHEIGHT/3 + 200), my_previous_function)
 
 #arrange button groups depending on level
 level1_buttons = [button_01, button_03, button_04]
-level2_buttons = [button_02, button_03]
+level2_buttons = [button_02]
 
 #---------Main Program Loop----------
 while carryOn:
@@ -133,7 +136,7 @@ while carryOn:
     # --- Draw code goes here
 
     # Clear the screen to white
-    screen.fill(WHITE)
+    screen.fill(BACKGROUND_COLOUR)
 
     # Draw buttons
     if level == 1:
