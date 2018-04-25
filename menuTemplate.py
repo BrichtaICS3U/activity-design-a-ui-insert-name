@@ -8,11 +8,16 @@ pygame.init()
 
 # Define some colours
 # Colours are defined using RGB values
-BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
-GREEN = (0, 200, 0)
-BRIGHT_GREEN = (0, 255, 0)
-RED = (200, 0, 0)
+GRAY = (127, 127, 127)
+BLACK = (0, 0, 0)
+RED = (255, 0, 0)
+BLUE = (0, 0, 255)
+BACKGROUND_COLOUR = (197, 197, 197)
+TITLE_COLOUR = (44, 66, 63)
+BUTTON1 = (148, 155, 150)
+BUTTON2 = (130, 145, 145)
+BUTTON3 = (76, 91, 97)
 
 # Open a new window
 # The window is defined as (width, height), measured in pixels
