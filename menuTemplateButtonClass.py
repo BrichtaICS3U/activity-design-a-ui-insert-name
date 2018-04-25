@@ -11,8 +11,8 @@ BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 BLUE = (0, 0, 255)
 
-SCREENWIDTH = 120
-SCREENHEIGHT = 100
+SCREENWIDTH = 800
+SCREENHEIGHT = 600
 size = (SCREENWIDTH, SCREENHEIGHT)
 screen = pygame.display.set_mode(size)
 
@@ -81,6 +81,10 @@ def my_quit_function():
     pygame.quit()
     sys.exit()
 
+def Hello():
+    """this function will print out hello in the shell"""
+    print("Hello")
+
 def mousebuttondown(level):
     """A function that checks which button was pressed"""
     pos = pygame.mouse.get_pos()
@@ -98,12 +102,16 @@ carryOn = True
 clock = pygame.time.Clock()
 
 #create button objects
-button_01 = Button("Next", (SCREENWIDTH/2, SCREENHEIGHT/3), my_next_function)
+#buttons on layer one
+button_01 = Button("Next", (SCREENWIDTH/2, SCREENHEIGHT/3 + 100), my_next_function)
+button_04 = Button("Settings",(SCREENWIDTH/2, SCREENHEIGHT/3 + 100),Hello)
+button_03 = Button("Quit", (SCREENWIDTH/2, SCREENHEIGHT/3 + 100), my_quit_function, bg=(50, 200, 20))
+
+#buttons on layer two
 button_02 = Button("Previous", (SCREENWIDTH/2, SCREENHEIGHT/3), my_previous_function)
-button_03 = Button("Quit", (SCREENWIDTH/2, SCREENHEIGHT*2/3), my_quit_function, bg=(50, 200, 20))
 
 #arrange button groups depending on level
-level1_buttons = [button_01, button_03]
+level1_buttons = [button_01, button_03, button_04]
 level2_buttons = [button_02, button_03]
 
 #---------Main Program Loop----------
