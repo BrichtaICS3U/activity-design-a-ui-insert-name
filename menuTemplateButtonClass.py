@@ -92,6 +92,11 @@ def Hello():
 
 def sound_ON():
     """this will turn the sound on"""
+    print("sound's ON")
+
+def sound_OFF():
+    """this will turn the sound off"""
+    print("sound's OFF")
 
 def mousebuttondown(level):
     """A function that checks which button was pressed"""
@@ -110,19 +115,24 @@ carryOn = True
 clock = pygame.time.Clock()
 
 #create button objects
-#buttons on layer one
 
-button_01 = Button("Hello", (SCREENWIDTH/2, SCREENHEIGHT/3 ), Hello,BUTTON1)
-button_04 = Button("Settings",(SCREENWIDTH/2, SCREENHEIGHT/3 + 100),my_next_function,BUTTON2)
-button_03 = Button("Quit", (SCREENWIDTH/2, SCREENHEIGHT/3 + 200), my_quit_function, BUTTON3)
+#buttons on layer one
+#feel free to change any of the settings to your fancy
+button_01 = Button("Hello", (SCREENWIDTH/2, SCREENHEIGHT/3 ), Hello,BUTTON1)#prints hello in the shell
+button_04 = Button("Settings",(SCREENWIDTH/2, SCREENHEIGHT/3 + 100),my_next_function,BUTTON2)#transfers the screen to layer 2
+button_03 = Button("Quit", (SCREENWIDTH/2, SCREENHEIGHT/3 + 200), my_quit_function, BUTTON3)#terminates the program 
 
 
 #buttons on layer two
-button_02 = Button("Previous", (SCREENWIDTH/2, SCREENHEIGHT/3 + 200), my_previous_function)
+#feel free to change any of the settings to your fancy
+#i didn't add colour to the on and off button cause i had no idea what you wanted so i left that for you#
+button_02 = Button("Previous", (SCREENWIDTH/2, SCREENHEIGHT/3 + 200), my_previous_function,BUTTON3)#returns to layer 1
+button_ON = Button("ON", (((SCREENWIDTH/6)*2) + 60, SCREENHEIGHT/3 + 100), sound_ON,WHITE, BLACK, size=(45, 50))#turns sound on
+button_OFF = Button("OFF",(((SCREENWIDTH/6)*3) + 70, SCREENHEIGHT/3 + 100), sound_OFF,WHITE, BLACK, size=(45, 50))#turns sound off
 
 #arrange button groups depending on level
 level1_buttons = [button_01, button_03, button_04]
-level2_buttons = [button_02]
+level2_buttons = [button_02,button_ON,button_OFF]
 
 #---------Main Program Loop----------
 while carryOn:
@@ -144,9 +154,19 @@ while carryOn:
     if level == 1:
         for button in level1_buttons:
             button.draw()
+        #Title
+        fontTitle = pygame.font.Font('freesansbold.ttf', 32)
+        textSurfaceTitle = fontTitle.render('Collab Menu', True, TITLE_COLOUR) 
+        textRectTitle = textSurfaceTitle.get_rect()
+        textRectTitle.center = (400, 100)# I changed the height of the text because it was overlapping over the button
+
+        screen.blit(textSurfaceTitle, textRectTitle)
+    
     elif level == 2:
         for button in level2_buttons:
             button.draw()
+
+    
 
     # Update the screen with queued shapes
     pygame.display.flip()
