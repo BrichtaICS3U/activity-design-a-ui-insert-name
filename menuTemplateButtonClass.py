@@ -10,8 +10,8 @@ GRAY = (127, 127, 127)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 BLUE = (0, 0, 255)
-BACKGROUND_COLOUR = (197, 197, 197)
-TITLE_COLOUR = (44, 66, 63)
+LIGHT_GREY = (197, 197, 197)
+DARK_GREY = (44, 66, 63)
 BUTTON1 = (148, 155, 150)
 BUTTON2 = (130, 145, 145)
 BUTTON3 = (76, 91, 97)
@@ -157,7 +157,7 @@ while carryOn:
             button.draw()
         #Title
         fontTitle = pygame.font.Font('freesansbold.ttf', 32)
-        textSurfaceTitle = fontTitle.render('Collab Menu', True, TITLE_COLOUR) 
+        textSurfaceTitle = fontTitle.render('Collab Menu', True, LIGHT_GREY) 
         textRectTitle = textSurfaceTitle.get_rect()
         textRectTitle.center = (400, 100)# I changed the height of the text because it was overlapping over the button
 
@@ -168,12 +168,12 @@ while carryOn:
             button.draw()
         #SettingsTitle
         fontSettingsTitle = pygame.font.Font('freesansbold.ttf', 32)
-        textSurfaceSettingsTitle = fontSettingsTitle.render('Settings', True, TITLE_COLOUR) 
+        textSurfaceSettingsTitle = fontSettingsTitle.render('Settings', True, LIGHT_GREY) 
         textRectSettingsTitle = textSurfaceSettingsTitle.get_rect()
         textRectSettingsTitle.center = (400, 100)
 
         fontSoundSubt = pygame.font.Font('freesansbold.ttf', 28)
-        textSurfaceSoundSubt = fontSoundSubt.render('Sound', True, TITLE_COLOUR) 
+        textSurfaceSoundSubt = fontSoundSubt.render('Sound', True, LIGHT_GREY) 
         textRectSoundSubt = textSurfaceSoundSubt.get_rect()
         textRectSoundSubt.center = (400, 250)
 
