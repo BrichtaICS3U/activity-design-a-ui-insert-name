@@ -165,6 +165,13 @@ while carryOn:
     elif level == 2:
         for button in level2_buttons:
             button.draw()
+        #SettingsTitle
+        fontSettingsTitle = pygame.font.Font('freesansbold.ttf', 32)
+        textSurfaceSettingsTitle = fontSettingsTitle.render('Settings', True, TITLE_COLOUR) 
+        textRectSettingsTitle = textSurfaceSettingsTitle.get_rect()
+        textRectSettingsTitle.center = (400, 100)
+
+        screen.blit(textSurfaceSettingsTitle, textRectSettingsTitle)
 
     
 
