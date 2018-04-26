@@ -23,6 +23,7 @@ screen = pygame.display.set_mode(size)
 
 background = pygame.image.load("darkfield.png")
 
+
 #music
 pygame.mixer.pre_init(frequency=44100, size=-16, channels=2, buffer=4096)
 pygame.mixer.music.load('Cricket.mp3')
@@ -101,13 +102,15 @@ def Hello():
 def sound_ON():
     """this will turn the sound on"""
     print("sound ON")
-    pygame.mixer.unpause()
+    pygame.mixer.pre_init(frequency=44100, size=-16, channels=2, buffer=4096)
+    pygame.mixer.music.load('Cricket.mp3')
+    pygame.mixer.music.play(-1) #-1 means loops for ever, 0 means play just once)
     
 
 def sound_OFF():
     """this will turn the sound off"""
     print("sound OFF")
-    pygame.mixer.pause()
+    pygame.mixer.music.stop()
     
    
 
