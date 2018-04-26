@@ -92,11 +92,11 @@ def Hello():
 
 def sound_ON():
     """this will turn the sound on"""
-    print("sound's ON")
+    print("sound ON")
 
 def sound_OFF():
     """this will turn the sound off"""
-    print("sound's OFF")
+    print("sound OFF")
 
 def mousebuttondown(level):
     """A function that checks which button was pressed"""
@@ -127,8 +127,8 @@ button_03 = Button("Quit", (SCREENWIDTH/2, SCREENHEIGHT/3 + 200), my_quit_functi
 #feel free to change any of the settings to your fancy
 #i didn't add colour to the on and off button cause i had no idea what you wanted so i left that for you#
 button_02 = Button("Previous", (SCREENWIDTH/2, SCREENHEIGHT/3 + 200), my_previous_function,BUTTON3)#returns to layer 1
-button_ON = Button("ON", (((SCREENWIDTH/6)*2) + 60, SCREENHEIGHT/3 + 100), sound_ON,WHITE, BLACK, size=(45, 50))#turns sound on
-button_OFF = Button("OFF",(((SCREENWIDTH/6)*3) + 70, SCREENHEIGHT/3 + 100), sound_OFF,WHITE, BLACK, size=(45, 50))#turns sound off
+button_ON = Button("ON", (((SCREENWIDTH/6)*2) + 60, SCREENHEIGHT/3 + 100), sound_ON,BUTTON2, size=(45, 50))#turns sound on
+button_OFF = Button("OFF",(((SCREENWIDTH/6)*3) + 70, SCREENHEIGHT/3 + 100), sound_OFF,BUTTON2, size=(45, 50))#turns sound off
 
 #arrange button groups depending on level
 level1_buttons = [button_01, button_03, button_04]
