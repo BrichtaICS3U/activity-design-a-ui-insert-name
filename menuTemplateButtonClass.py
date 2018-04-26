@@ -93,10 +93,12 @@ def Hello():
 def sound_ON():
     """this will turn the sound on"""
     print("sound ON")
+    Sound = True
 
 def sound_OFF():
     """this will turn the sound off"""
     print("sound OFF")
+    Sound = False
 
 def mousebuttondown(level):
     """A function that checks which button was pressed"""
@@ -113,6 +115,7 @@ def mousebuttondown(level):
 level = 1
 carryOn = True
 clock = pygame.time.Clock()
+Sound = True
 
 #create button objects
 
@@ -144,7 +147,11 @@ while carryOn:
             mousebuttondown(level)
 
     # --- Game logic goes here
-    
+    if Sound == True:
+        pygame. mixer.pre_init(frequency = 44100, size =-16, channels = 1, buffer = 1000)
+        pygame.mixer.music.load('Cricket.mp3')
+        pygame.mixer.music.play(-1)#-1 will loop the song, 0 will play once
+        
 
     # --- Draw code goes here
 
