@@ -21,6 +21,8 @@ SCREENHEIGHT = 600
 size = (SCREENWIDTH, SCREENHEIGHT)
 screen = pygame.display.set_mode(size)
 
+background = pygame.image.load("darkfield.png")
+
 class Button():
     """This is a class for a generic button.
     
@@ -114,6 +116,12 @@ level = 1
 carryOn = True
 clock = pygame.time.Clock()
 
+
+#Music
+pygame.mixer.pre_init(frequency=44100, size=-16, channels=2, buffer=4096)
+pygame.mixer.music.load('Cricket.mp3')
+pygame.mixer.music.play(-1) #-1 means loops for ever, 0 means play just once)
+
 #create button objects
 
 #buttons on layer one
@@ -148,7 +156,6 @@ while carryOn:
     # --- Draw code goes here
 
     # Clear the screen to white
-    background = pygame.image.load("darkfield.png")
     screen.blit(background, (0, 0))
 
     # Draw buttons
