@@ -171,6 +171,12 @@ while carryOn:
         textRectSettingsTitle = textSurfaceSettingsTitle.get_rect()
         textRectSettingsTitle.center = (400, 100)
 
+        fontSoundSubt = pygame.font.Font('freesansbold.ttf', 28)
+        textSurfaceSoundSubt = fontSoundSubt.render('Sound', True, TITLE_COLOUR) 
+        textRectSoundSubt = textSurfaceSoundSubt.get_rect()
+        textRectSoundSubt.center = (400, 250)
+
+        screen.blit(textSurfaceSoundSubt, textRectSoundSubt)
         screen.blit(textSurfaceSettingsTitle, textRectSettingsTitle)
 
     
