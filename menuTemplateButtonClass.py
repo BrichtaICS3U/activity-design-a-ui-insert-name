@@ -23,6 +23,12 @@ screen = pygame.display.set_mode(size)
 
 background = pygame.image.load("darkfield.png")
 
+#music
+pygame.mixer.pre_init(frequency=44100, size=-16, channels=2, buffer=4096)
+pygame.mixer.music.load('Cricket.mp3')
+pygame.mixer.music.play(-1) #-1 means loops for ever, 0 means play just once)
+
+
 class Button():
     """This is a class for a generic button.
     
@@ -95,10 +101,15 @@ def Hello():
 def sound_ON():
     """this will turn the sound on"""
     print("sound ON")
+    pygame.mixer.unpause()
+    
 
 def sound_OFF():
     """this will turn the sound off"""
     print("sound OFF")
+    pygame.mixer.pause()
+    
+   
 
 def mousebuttondown(level):
     """A function that checks which button was pressed"""
@@ -117,10 +128,6 @@ carryOn = True
 clock = pygame.time.Clock()
 
 
-#Music
-pygame.mixer.pre_init(frequency=44100, size=-16, channels=2, buffer=4096)
-pygame.mixer.music.load('Cricket.mp3')
-pygame.mixer.music.play(-1) #-1 means loops for ever, 0 means play just once)
 
 #create button objects
 
@@ -142,6 +149,7 @@ button_OFF = Button("OFF",(((SCREENWIDTH/6)*3) + 70, SCREENHEIGHT/3 + 100), soun
 level1_buttons = [button_01, button_03, button_04]
 level2_buttons = [button_02,button_ON,button_OFF]
 
+
 #---------Main Program Loop----------
 while carryOn:
     # --- Main event loop ---
@@ -150,8 +158,7 @@ while carryOn:
             carryOn = False
         elif event.type == pygame.MOUSEBUTTONDOWN: # Player clicked the mouse
             mousebuttondown(level)
-
-    # --- Game logic goes here
+        
 
     # --- Draw code goes here
 
@@ -185,7 +192,7 @@ while carryOn:
         textRectSoundSubt.center = (400, 250)
 
         screen.blit(textSurfaceSoundSubt, textRectSoundSubt)
-        screen.blit(textSurfaceSettingsTitle, textRectSettingsTitle)
+        screen.blit(textSurfaceSettingsTitle, textRectSettingsTitle)    
 
     
 
