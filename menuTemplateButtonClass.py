@@ -148,7 +148,8 @@ while carryOn:
     # --- Draw code goes here
 
     # Clear the screen to white
-    screen.fill(BACKGROUND_COLOUR)
+    background = pygame.image.load("darkfield.png")
+    screen.blit(background, (0, 0))
 
     # Draw buttons
     if level == 1:
